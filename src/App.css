@@ -1,38 +1,10 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    background:linear-gradient(to top, rgb(139, 236, 236),rgb(66, 151, 185), rgb(3, 11, 55));
+    font-family: 'Big Shoulders Display', sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.center{
+    background-color: rgba(98, 97, 102, 0.257) ;
+    border: 2px rgb(85, 135, 182);
 }
