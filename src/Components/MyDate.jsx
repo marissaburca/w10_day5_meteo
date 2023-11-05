@@ -7,7 +7,7 @@ const MyDate=() =>{
     const updateDateTime = () => {
       const now = new Date();
       const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-      const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      const timeOptions = { hour: '2-digit', minute: '2-digit'};
       const formattedDate = now.toLocaleDateString(undefined, dateOptions);
       const formattedTime = now.toLocaleTimeString(undefined, timeOptions);
       setCurrentDateTime(`${formattedDate} ${formattedTime}`);
