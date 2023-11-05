@@ -9,9 +9,8 @@ import { Nav } from "react-bootstrap";
 const MyNavbar = () => {
 
   return (
-   <Row className="mx-0">
+   <Row className="bg-dark mx-0 sides">
       <Navbar
-        bg="dark"
         data-bs-theme="dark"
         className="justify-content-between align-items-center px-4"
       >

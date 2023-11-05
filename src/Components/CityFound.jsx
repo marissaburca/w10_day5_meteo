@@ -3,8 +3,8 @@ import { Row } from "react-bootstrap";
 import { BiErrorAlt } from "react-icons/bi";
 import { Spinner, Alert } from "react-bootstrap";
 import WeatherIcon from "./WeatherIcon";
-import {BsThermometerLow, BsThermometerHigh} from 'react-icons/bs'
-import {RiWindyFill} from 'react-icons/ri'
+import { BsThermometerLow, BsThermometerHigh } from "react-icons/bs";
+import { RiWindyFill } from "react-icons/ri";
 import Forecast from "./Forecast";
 
 const CityFound = (props) => {
@@ -66,34 +66,42 @@ const CityFound = (props) => {
 
       {!isError && !isLoading && weatherData && (
         <div className="mt-4 text-white">
-          <div className="display-5 mb-5 city ">
+          <div className="display-5 mb-2 py-2 city ">
             <span>{weatherData.city.name}, </span>
             <span>{country}</span>
           </div>
-          <div className="pt-3 fs-1 pb-1 temp text-light">
+          <div className="pt-3 fs-1 pb-1 more-info text-light">
             <div className="d-flex justify-content-around">
-            <span className="pe-2">
-              {kelvinInCelsius(weatherData.list[0].main.temp).toFixed(1)}°C
-            </span>
-            <span className="pe-2">
-              <WeatherIcon weatherCondition={weatherData.list[0].weather[0].main} />
-            </span>
+              <span className="pe-2">
+                {kelvinInCelsius(weatherData.list[0].main.temp).toFixed(1)}°C
+              </span>
+              <span className="pe-2">
+                <WeatherIcon
+                  weatherCondition={weatherData.list[0].weather[0].main}
+                />
+              </span>
             </div>
             <p className="pe-2 pt-2 fs-4">
-             {weatherData.list[0].wind.speed} km/h <RiWindyFill/>
+              {weatherData.list[0].wind.speed} km/h <RiWindyFill />
             </p>
           </div>
-          <div className="mt-2 fs-4 p-3 mt-2 d-flex justify-content-between text-dark high">
-            <div >
-              <span className="pe-1"><BsThermometerLow/>Min </span>
+          <div className="mt-3 fs-4 p-3 d-flex justify-content-between text-dark high">
+            <div>
+              <span className="pe-1">
+                <BsThermometerLow />
+                Min{" "}
+              </span>
               {kelvinInCelsius(weatherData.list[0].main.temp_min).toFixed(1)}°C
             </div>
-            <div >
-              <span className="ps-1 boder"><BsThermometerHigh/>Max </span>
+            <div>
+              <span className="ps-1 boder">
+                <BsThermometerHigh />
+                Max{" "}
+              </span>
               {kelvinInCelsius(weatherData.list[0].main.temp_max).toFixed(1)}°C
             </div>
           </div>
-          <Forecast array={weatherData.list} calc={kelvinInCelsius}/>
+          <Forecast array={weatherData.list} calc={kelvinInCelsius} />
         </div>
       )}
     </Row>

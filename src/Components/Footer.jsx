@@ -4,7 +4,7 @@ import { BsFacebook, BsLinkedin, BsInstagram,BsTwitter } from 'react-icons/bs'
 const Footer = () => {
   return (
     <>
-    <footer className="bg-dark text-center text-light border ">
+    <footer className=" bg-dark text-center text-light ">
       <div className="container p-4 pb-0">
         <section className="mb-1">
           <span className="fs-3 px-2">

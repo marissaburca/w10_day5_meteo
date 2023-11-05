@@ -16,7 +16,7 @@ const Home = () => {
     <div className="flex-grow-1 p-5 mx-auto text-center ">
     <div 
     className="center mx-auto"
-    style={{height: '99%', width: '80%'}}> 
+    style={{height: '99%'}}> 
     <Row className="mx-0 ">
       <h2 
       className="fw-bold fs-1 text-center py-5 mb-3 text-white  "
