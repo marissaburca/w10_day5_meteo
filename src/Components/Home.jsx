@@ -19,7 +19,7 @@ const Home = () => {
     style={{height: '99%', width: '80%'}}> 
     <Row className="mx-0 ">
       <h2 
-      className="fw-bold fs-1 text-center py-5 mb-5 text-white "
+      className="fw-bold fs-1 text-center py-5 mb-3 text-white  "
       style={{ height: "50px" }}
       >
        LOOK UP THE FORECAST IN A CITY
@@ -29,7 +29,7 @@ const Home = () => {
         style={{ width: "85%", height: "50px" }}
       >
         <Form.Control
-          className="fs-4"
+          className="fs-4 text-center"
           type="text"
           placeholder="Enter name or contry code.."
           aria-label="Enter name or contry code"

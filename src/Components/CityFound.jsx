@@ -5,6 +5,7 @@ import { Spinner, Alert } from "react-bootstrap";
 import WeatherIcon from "./WeatherIcon";
 import {BsThermometerLow, BsThermometerHigh} from 'react-icons/bs'
 import {RiWindyFill} from 'react-icons/ri'
+import Forecast from "./Forecast";
 
 const CityFound = (props) => {
   const country = props.country;
@@ -18,7 +19,7 @@ const CityFound = (props) => {
 
   const getCityData = () => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${props.lat}&lon=${props.lon}&appid=${props.mykey}`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${props.lat}&lon=${props.lon}&appid=${props.mykey}`
     )
       .then((res) => {
         if (res.ok) {
@@ -64,33 +65,35 @@ const CityFound = (props) => {
       )}
 
       {!isError && !isLoading && weatherData && (
-        <div className="mt-5 text-white">
-          <div className="display-5">
-            <span>{weatherData.name}, </span>
+        <div className="mt-4 text-white">
+          <div className="display-5 mb-5 city ">
+            <span>{weatherData.city.name}, </span>
             <span>{country}</span>
           </div>
-          <div className="pt-3 fs-1">
-            <p className="pe-2">
-              {kelvinInCelsius(weatherData.main.temp).toFixed(1)}°C
-            </p>
-            <p className="pe-2">
-              <WeatherIcon weatherCondition={weatherData.weather[0].main} />
-            </p>
-            <p className="pe-2 fs-4">
-             {weatherData.wind.speed} km/h <RiWindyFill/>
+          <div className="pt-3 fs-1 pb-1 temp text-light">
+            <div className="d-flex justify-content-around">
+            <span className="pe-2">
+              {kelvinInCelsius(weatherData.list[0].main.temp).toFixed(1)}°C
+            </span>
+            <span className="pe-2">
+              <WeatherIcon weatherCondition={weatherData.list[0].weather[0].main} />
+            </span>
+            </div>
+            <p className="pe-2 pt-2 fs-4">
+             {weatherData.list[0].wind.speed} km/h <RiWindyFill/>
             </p>
           </div>
-          <div className="mt-2 fs-3 p-3 mt-5 d-flex justify-content-between ">
+          <div className="mt-2 fs-4 p-3 mt-2 d-flex justify-content-between text-dark high">
             <div >
-              <span className="pe-2"><BsThermometerLow/>Min </span>
-              {kelvinInCelsius(weatherData.main.temp_min).toFixed(1)}°C
+              <span className="pe-1"><BsThermometerLow/>Min </span>
+              {kelvinInCelsius(weatherData.list[0].main.temp_min).toFixed(1)}°C
             </div>
             <div >
-              <span className="pe-2 boder"><BsThermometerHigh/>Max </span>
-              {kelvinInCelsius(weatherData.main.temp_max).toFixed(1)}°C
+              <span className="ps-1 boder"><BsThermometerHigh/>Max </span>
+              {kelvinInCelsius(weatherData.list[0].main.temp_max).toFixed(1)}°C
             </div>
-            
           </div>
+          <Forecast array={weatherData.list} calc={kelvinInCelsius}/>
         </div>
       )}
     </Row>

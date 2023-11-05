@@ -10,18 +10,17 @@ BsSnow2,
 const WeatherIcon = ({ weatherCondition }) => {
    
         if (weatherCondition === 'Rain') {
-            return <span>Rain <BsCloudRainHeavyFill /></span>;
+            return <span>Rain <BsCloudRainHeavyFill className="text-primary" /></span>;
           } else if (weatherCondition === 'Clear') {
-            return <span>Clear <BsSun /></span>;
+            return <span>Clear <BsSun className="text-warning"  /></span>;
           } else if (weatherCondition === 'Fog') {
-            return <span>Fog <BsFillCloudFog2Fill /></span>;
+            return <span>Fog <BsFillCloudFog2Fill className="text-white"/></span>;
           } else if (weatherCondition === 'Clouds') {
-            return <span>Clouds <BsCloudsFill/></span>;
+            return <span>Clouds <BsCloudsFill className="text-white"/></span>;
           } else if (weatherCondition === 'Drizzle') {
-            return <span>Drizzle <BsCloudDrizzle/></span>;
-         
+            return <span>Drizzle <BsCloudDrizzle className="text-primary"/></span>;
           } else if (weatherCondition === 'Snow') {
-            return <span>Snow <BsSnow2/></span>;
+            return <span>Snow <BsSnow2 className="text-white"/></span>;
           } else {
             return '';
           }

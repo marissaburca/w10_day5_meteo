@@ -1,10 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap');
 
 body{
-    background:linear-gradient(to top, rgb(139, 236, 236),rgb(66, 151, 185), rgb(3, 11, 55));
+    /* background:linear-gradient(to top, rgb(139, 236, 236),rgb(66, 151, 185), rgb(3, 11, 55)); */
     font-family: 'Big Shoulders Display', sans-serif;
+    background-image: url('https://www.pixel4k.com/wp-content/uploads/2018/10/clouds-summer-weather-4k_1540136727.jpg') ;
+    background-size:cover;
+    background-position: center;
 }
 .center{
     background-color: rgba(98, 97, 102, 0.257) ;
     border: 2px rgb(85, 135, 182);
+}
+
+.more-info{
+    background-color: rgba(7, 7, 7, 0.337);
+}
+.temp{
+    background-color: rgba(9, 26, 48, 0.385);
+}
+.high{
+    background: linear-gradient(to right,rgb(31, 73, 118),yellow, red) ;
+}
+.city{
+    background-color: rgba(7, 7, 7, 0.337);
 }

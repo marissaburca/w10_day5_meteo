@@ -4,7 +4,6 @@ import CityFound from "./CityFound";
 const myKey = "67e4b4a86eaad69376c1d83da61f1d35";
 
 const Convert = (props) => {
-  console.log(props);
   const city = props.city;
   console.log("la città di merda", city);
   const [lat, setLat] = useState();
@@ -25,7 +24,6 @@ const Convert = (props) => {
         }
       })
       .then((data) => {
-        console.log(data);
         setLat(data[0].lat);
         setLon(data[0].lon);
         setCountry(data[0].country);
