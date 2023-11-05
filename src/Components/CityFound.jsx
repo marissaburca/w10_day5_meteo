@@ -7,6 +7,7 @@ import { BsThermometerLow, BsThermometerHigh } from "react-icons/bs";
 import { RiWindyFill } from "react-icons/ri";
 import Forecast from "./Forecast";
 
+
 const CityFound = (props) => {
   const country = props.country;
   const [weatherData, setWeatherData] = useState([]);
@@ -82,10 +83,10 @@ const CityFound = (props) => {
               </span>
             </div>
             <p className="pe-2 pt-2 fs-4">
-              {weatherData.list[0].wind.speed} km/h <RiWindyFill />
+              {(weatherData.list[0].wind.speed * 3.6).toFixed(1)} km/h <RiWindyFill />
             </p>
           </div>
-          <div className="mt-3 fs-4 p-3 d-flex justify-content-between text-dark high">
+          <div className="mt-3 fs-4 p-3 d-flex justify-content-between text-white high">
             <div>
               <span className="pe-1">
                 <BsThermometerLow />

@@ -3,9 +3,6 @@
 body{
     /* background:linear-gradient(to top, rgb(139, 236, 236),rgb(66, 151, 185), rgb(3, 11, 55)); */
     font-family: 'Big Shoulders Display', sans-serif;
-    background-image: url('https://www.pixel4k.com/wp-content/uploads/2018/10/clouds-summer-weather-4k_1540136727.jpg') ;
-    background-size:cover;
-    background-position: center;
 }
 .center{
     background-color: rgba(11, 61, 72, 0.709) ;
