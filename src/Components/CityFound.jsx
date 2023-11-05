@@ -102,7 +102,8 @@ const CityFound = (props) => {
               {kelvinInCelsius(weatherData.list[0].main.temp_max).toFixed(1)}°C
             </div>
           </div>
-          <Forecast array={weatherData.list} calc={kelvinInCelsius} />
+          <Forecast 
+          array={weatherData.list} calc={kelvinInCelsius} />
         </div>
       )}
     </Row>

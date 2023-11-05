@@ -24,7 +24,7 @@ const WeatherIcon = ({ weatherCondition}) => {
           } else if (weatherCondition === 'Clear') {
             return (
               <span>
-                {isNight ? 'Clear Night' : 'Clear Day'}{' '}
+                {isNight ? 'Clear' : 'Clear'}{' '}
                 {isNight ? <BsFillMoonStarsFill className="text-white" /> : <BsSunFill className="text-warning" />}
               </span>
             );
