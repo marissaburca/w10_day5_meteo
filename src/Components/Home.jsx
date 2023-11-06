@@ -8,9 +8,22 @@ import { Row } from "react-bootstrap";
 import Convert from "./Convert";
 
 const Home = () => {
-  const isNight = <MyDate/> <=  '06:00' || <MyDate/> >= '18:00';
+  const getCurrentTime=() =>{
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+  
+    const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+  
+    return formattedTime;
+  }
+  
+  const currentTime = getCurrentTime();
+  console.log(currentTime);
+  const isNight = currentTime <=  '06:00' || currentTime >= '18:00';
   const [inputValue, setInputValue] = useState('');
   console.log(isNight)
+  console.log(MyDate)
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -52,7 +65,7 @@ const Home = () => {
       </InputGroup>
         { inputValue &&
          <Row className='mx-0 '>
-             <Convert city={inputValue} />
+             <Convert city={inputValue}/>
         </Row>
         }
     </Row>

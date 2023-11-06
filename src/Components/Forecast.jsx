@@ -1,4 +1,3 @@
-import { BsThermometerLow, BsThermometerHigh } from "react-icons/bs";
 import WeatherIcon from "./WeatherIcon";
 
 const Forecast = (props) => {

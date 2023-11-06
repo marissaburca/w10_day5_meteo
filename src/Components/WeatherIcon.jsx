@@ -1,5 +1,3 @@
-import MyDate from "./MyDate";
-
 import { 
 BsCloudRainHeavyFill,  
 BsFillCloudFog2Fill,
@@ -14,10 +12,28 @@ import{
 } from 'react-icons/ri'
 
 
+
+
+
 const WeatherIcon = ({ weatherCondition}) => {
 
-  const isNight = <MyDate/> >= '18:00';
-  console.log('sono NOTTE ',MyDate)
+  const getCurrentTime=() =>{
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+  
+    const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+  
+    return formattedTime;
+  }
+  
+  const currentTime = getCurrentTime();
+  console.log(currentTime);
+  
+
+  const isNight = currentTime >= 18 || currentTime < 6;
+
+  console.log('isNight: ', isNight);
    
         if (weatherCondition === 'Rain') {
             return <span>Rain <BsCloudRainHeavyFill className="text-primary" /></span>;
