@@ -13,7 +13,7 @@ const Convert = (props) => {
  
   useEffect(() => {
     fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${myKey}`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${myKey}`
     )
       .then((res) => {
         if (res.ok) {
